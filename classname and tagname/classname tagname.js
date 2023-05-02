@@ -1,4 +1,4 @@
-//USING CLASSNAME
+//USING  CLASSNAME
 let listgroup = document.getElementsByClassName('list-group-item')
 console.log(listgroup)
 listgroup[1].style.backgroundColor = 'green'
@@ -11,7 +11,7 @@ for(var i=0; i<listgroup.length; i++) {
     listgroup[i].style.backgroundColor = 'grey'
 }
 
-//USING TAGNAME
+//USING  TAGNAME
 
 let li = document.getElementsByTagName('li')
 console.log(li)
