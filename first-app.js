@@ -8,6 +8,7 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   const url = req.url;
+  const method = req.method;
   // if (url === "/home") {
   //   res.write("<html>");
   //   res.write("<head><title>Home</title></head>");
