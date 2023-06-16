@@ -8,27 +8,26 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   const url = req.url;
-  const method = req.method;
-  // if (url === '/home') {
-  //     res.write('<html>')
-  //     res.write('<head><title>Home</title></head>')
-  //     res.write("<body><h1>Welcome home</h1></body>");
-  //     res.write('</html>')
-  //     return res.end();
+  // if (url === "/home") {
+  //   res.write("<html>");
+  //   res.write("<head><title>Home</title></head>");
+  //   res.write("<body><h1>Welcome home</h1></body>");
+  //   res.write("</html>");
+  //   res.end();
   // }
   // if (url === "/about") {
   //   res.write("<html>");
   //   res.write("<head><title>About Us</title></head>");
   //   res.write("<body><h1>Welcome to About Us page</h1></body>");
   //   res.write("</html>");
-  //   return res.end();
+  //   res.end();
   // }
   // if (url === "/node") {
   //   res.write("<html>");
   //   res.write("<head><title>Node JS</title></head>");
   //   res.write("<body><h1>Welcome to my Node Js project</h1></body>");
   //   res.write("</html>");
-  //   return res.end();
+  //   res.end();
   // }
   if (url === "/") {
     res.write("<html>");
@@ -41,10 +40,12 @@ const server = http.createServer((req, res) => {
   }
   if (url === "/message" && method === "POST") {
     const body = [];
-    req.on("data", (chunk) => {         // will be fired when new chunk is ready to be read
+    req.on("data", (chunk) => {
+      // will be fired when new chunk is ready to be read
       body.push(chunk);
     });
-    req.on("end", () => {               // will be fired when its done parsing the incoming request data
+    req.on("end", () => {
+      // will be fired when its done parsing the incoming request data
       const parsedBody = Buffer.concat(body).toString();
       console.log(parsedBody);
       const message = parsedBody.split("=")[1];
