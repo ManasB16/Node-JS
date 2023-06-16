@@ -9,7 +9,10 @@ const fs = require("fs");
 const server = http.createServer((req, res) => {
   const url = req.url;
   const method = req.method;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5774703452d8d0d57b38258295e434966f9f36f7
   // if (url === "/home") {
   //   res.write("<html>");
   //   res.write("<head><title>Home</title></head>");
