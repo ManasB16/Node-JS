@@ -21,14 +21,15 @@ const requestHandler = (req, res) => {
 
   if (url === "/message" && method === "POST") {
     const body = [];
+
     req.on("data", (chunk) => {
       // will be fired when new chunk is ready to be read
       body.push(chunk);
     });
+
     return req.on("end", () => {
       // will be fired when its done parsing the incoming request data
       const parsedBody = Buffer.concat(body).toString();
-      console.log(parsedBody);
       const message = parsedBody.split("=")[1];
       fs.writeFile("message.txt", message, (err) => {
         res.statusCode = 302;
@@ -40,3 +41,13 @@ const requestHandler = (req, res) => {
 };
 
 module.exports = requestHandler;
+
+// module.exports = {
+//     handler: requestHandler,
+//     someText: 'HI'
+// }
+
+// module.exports.handler = requestHandler
+// module.exports.someText = 'HI'
+
+// exports.handler = requestHandler
