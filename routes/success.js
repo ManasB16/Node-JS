@@ -3,8 +3,8 @@ const router = express.Router();
 const path = require("path");
 const rootDir = require("../util/path");
 
-router.get("/", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "shop.html"));
+router.post("/success", (req, res, next) => {
+  res.send("<h1>Form Successfuly Filled</h1>");
 });
 
 module.exports = router;
