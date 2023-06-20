@@ -19,7 +19,7 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   console.log(`${req.body.username} : ${req.body.message}`);
-  let chat = `${req.body.username} : ${req.body.message}`;
+  let chat = ` ${req.body.username} : ${req.body.message}`;
   fs.writeFile("chat.txt", chat, { flag: "a" }, (err) => {
     err ? console.log(err) : res.redirect("/");
   });
