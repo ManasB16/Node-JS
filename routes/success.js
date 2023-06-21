@@ -2,9 +2,8 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const rootDir = require("../util/path");
+const successCtrl = require("../controllers/success");
 
-router.post("/success", (req, res, next) => {
-  res.send("<h1>Form Successfuly Filled</h1>");
-});
+router.post("/success", successCtrl.Success);
 
 module.exports = router;
